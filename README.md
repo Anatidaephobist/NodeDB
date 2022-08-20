@@ -1,3 +1,5 @@
+NodeDB project with SQLite as Database.
+
 ## Clone the repo and install the dependencies
 
 ```
