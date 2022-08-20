@@ -11,6 +11,7 @@ npm install
 ## Start the express server
 ```
 npm run dev
+server is now running on localhost:9000
 ```
 
 # Endpoints
