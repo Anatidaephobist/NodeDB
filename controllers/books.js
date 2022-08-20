@@ -28,12 +28,6 @@ const singleBook = (req, res) => {
 const newBook = (req, res) => {
   let validData = validateData(req);
   if (validData) {
-    db.all(`SELECT * FROM books WHERE title='${req.body.title}' AND author='${req.body.author}' AND year=${req.body.year}`, [], (error, data) => {
-      if (error) errorHandler(error);
-      if (data.length > 1) {
-        res.status(httpStatusCodes.BAD_REQUEST).end();
-        return;
-      }
       db.run(`INSERT INTO books(title, author, year, publisher, description) VALUES(?,?,?,?,?)`,
         [`${req.body.title}`, `${req.body.author}`, `${req.body.year}`, `${req.body.publisher}`, `${req.body.description}`], (error, data) => {
           if (error) errorHandler(error);
@@ -43,7 +37,6 @@ const newBook = (req, res) => {
             return;
           });
         });
-    });
   } else {
     res.status(400).end();
   }
