@@ -1,7 +1,7 @@
 ## Clone the repo and install the dependencies
 
 ```
-git clone https://github.com/MustaniemiJM/nodeDB.git
+git clone git@github.com:Anatidaephobist/NodeDB.git
 
 cd nodeDB
 ```
